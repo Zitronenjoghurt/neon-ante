@@ -5,5 +5,9 @@ license.workspace = true
 version.workspace = true
 
 [dependencies]
-neon-ante-games = { workspace = true }
+neon-ante-games = { workspace = true, features = ["serde"] }
+brotli = "8"
 ratatui = { workspace = true }
+rmp-serde = "1"
+serde = { workspace = true }
+web-time = "1.1"

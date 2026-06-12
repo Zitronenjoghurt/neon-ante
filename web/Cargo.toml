@@ -6,5 +6,8 @@ version.workspace = true
 
 [dependencies]
 neon-ante-core = { workspace = true }
+base64 = "0.22"
+critical-section = { version = "1", features = ["std"] }
 ratzilla = "0.3"
 web-time = "1.1.0"
+web-sys = { version = "0.3", features = ["Window", "Storage"] }

@@ -21,6 +21,10 @@ impl Suit {
             Suit::Spades => '♠',
         }
     }
+
+    pub fn is_red(&self) -> bool {
+        matches!(self, Suit::Diamonds | Suit::Hearts)
+    }
 }
 
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
