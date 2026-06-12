@@ -1,12 +1,12 @@
-use base64::engine::general_purpose::STANDARD as BASE64;
 use base64::Engine;
+use base64::engine::general_purpose::STANDARD as BASE64;
 use neon_ante_core::app::App;
 use neon_ante_core::event::{Key, Msg};
 use neon_ante_core::persistence::PersistenceBackend;
 use ratzilla::backend::webgl2::{FontAtlasConfig, WebGl2BackendOptions};
 use ratzilla::event::KeyCode;
-use ratzilla::ratatui::style::Color;
 use ratzilla::ratatui::Terminal;
+use ratzilla::ratatui::style::Color;
 use ratzilla::{WebGl2Backend, WebRenderer};
 use std::cell::RefCell;
 use std::io;
