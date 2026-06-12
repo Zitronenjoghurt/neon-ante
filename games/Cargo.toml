@@ -1,0 +1,13 @@
+[package]
+name = "neon-ante-games"
+version.workspace = true
+license.workspace = true
+edition.workspace = true
+
+[features]
+serde = ["dep:serde"]
+
+[dependencies]
+rand = { version = "0.10.1", default-features = false }
+serde = { workspace = true, optional = true }
+thiserror = { workspace = true }

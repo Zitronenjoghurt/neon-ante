@@ -1,0 +1,9 @@
+[package]
+name = "neon-ante-core"
+edition.workspace = true
+license.workspace = true
+version.workspace = true
+
+[dependencies]
+neon-ante-games = { workspace = true }
+ratatui = { workspace = true }

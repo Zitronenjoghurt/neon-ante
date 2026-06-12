@@ -1,0 +1,37 @@
+services:
+  server:
+    container_name: neon-ante
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "51717:51717"
+
+  server-dev:
+    container_name: neon-ante
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.dev
+    env_file:
+      - .env
+    ports:
+      - "127.0.0.1:51717:51717"
+    volumes:
+      - ..:/neon-ante
+      - neon_ante_cargo_target:/neon-ante/target
+      - neon_ante_cargo_registry:/usr/local/cargo/registry
+    init: true
+    command: >-
+      cargo watch -w core -w server -w web --delay 3
+      -s "cd /neon-ante/web && trunk build --release --filehash false
+      && cd /neon-ante && cargo run --bin neon-ante-server"
+    environment:
+      - STATIC_DIR=/neon-ante/web/dist
+    profiles: [ dev ]
+
+volumes:
+  neon_ante_cargo_target:
+  neon_ante_cargo_registry:

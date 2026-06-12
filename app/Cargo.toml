@@ -1,0 +1,9 @@
+[package]
+name = "neon-ante-app"
+edition.workspace = true
+license.workspace = true
+version.workspace = true
+
+[dependencies]
+neon-ante-core = { workspace = true }
+ratatui = { workspace = true, default-features = true }
